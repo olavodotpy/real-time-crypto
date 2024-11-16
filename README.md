@@ -1,4 +1,4 @@
-necessary step to install the project and configure a Django.
+## Necessary step to install the project and configure a Django.
 
 ## Install a Virtual Environment:
 
