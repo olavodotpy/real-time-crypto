@@ -1,18 +1,18 @@
-Here is a step-by-step guide to configuring and installing Django and the project.
+necessary step to install the project and configure a Django.
 
-# Install a Virtual Environment:
+## Install a Virtual Environment:
 
-```bash
+```python
 python -m venv my_virtual_environment
 ```
 
-# Activate the virtual environment:
+## Activate the virtual environment:
 
 ```bash
 source my_virtual_environment/bin/
 ```
 
-# Install the requirements:
+## Install the requirements:
 
 ```python
 pip install -r requirements.txt

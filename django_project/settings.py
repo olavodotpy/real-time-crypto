@@ -39,15 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -123,7 +127,60 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]   
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# REST Framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    ),
+}
+
+
+# Allows sending of cookies/session
+
+CORS_ALLOW_CREDENTIALS = True 
+
+
+# session configuration in Django
+SESSION_ENGINE = "django.contrib.sessions.backends.db" 
+
+SESSION_COOKIE_HTTPONLY = True  
+
+# For local development, if using HTTP
+
+SESSION_COOKIE_SECURE = False 
+
+# Or 'None' for separate front-end development
+
+SESSION_COOKIE_SAMESITE = 'Lax' 
+
+
+# CSRF COOKIE
+
+CSRF_COOKIE_SECURE = False
+
+#  to prevent the browser from manipulating the session
+
+CSRF_COOKIE_SAMESITE =  'Strict'
+
+
+# caching using redis
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+    }
+}

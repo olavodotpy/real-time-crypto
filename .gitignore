@@ -1,0 +1,12 @@
+# Ambiente virtual
+env/
+venv/
+__pycache__/
+
+# Arquivos de configuração
+*.sqlite3
+*.db
+
+# IDE
+.idea/
+.vscode/
