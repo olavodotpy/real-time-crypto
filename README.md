@@ -1,4 +1,4 @@
-## Necessary step to install the project and configure a Django.
+# Necessary step to install the project:
 
 ## Install a Virtual Environment:
 
@@ -18,7 +18,7 @@ source my_virtual_environment/bin/
 pip install -r requirements.txt
 ```
 
-# Configuring Django: APPS and Projects
+# Configuring Django APPS and Projects:
 
 ## Start a Django Project:
 
