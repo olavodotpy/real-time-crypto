@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['set-price-crypto.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['real-time-crypto-production.up.railway.app/', '127.0.0.1']
 
 
 # Application definition
@@ -177,6 +177,9 @@ CSRF_COOKIE_SECURE = False
 #  to prevent the browser from manipulating the session
 
 CSRF_COOKIE_SAMESITE =  'Strict'
+
+
+CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
 
 
 # caching using redis
