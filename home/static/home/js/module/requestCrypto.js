@@ -1,3 +1,6 @@
+console.log("carregado requestcrypto")
+
+
 /**
  * class implementing the structure of an 
  * async fetch for requests made to REST

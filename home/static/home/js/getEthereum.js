@@ -1,5 +1,10 @@
+console.log("carregado get do ethereum antes")
+
+
 import { CryptoAPI } from "./module/requestCrypto.js";
 import { formatPrice } from "./module/formattingPrice.js"
+
+console.log("carregado get do ethereum depois")
 
 
 const requestCryptoData = new CryptoAPI("http://127.0.0.1:8000/");

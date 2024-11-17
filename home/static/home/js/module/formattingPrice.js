@@ -1,3 +1,6 @@
+console.log("carregado formatação de preço")
+
+
 /**
  * Formats the price to floating point
  * standards for each currency.
