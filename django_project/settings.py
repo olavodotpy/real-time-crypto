@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.railway.app', 'localhost']
 
 
 # Application definition
@@ -150,6 +150,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 # session configuration in Django
+
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
 SESSION_COOKIE_HTTPONLY = True  
