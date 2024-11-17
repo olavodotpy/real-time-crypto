@@ -13,6 +13,11 @@ from .utils import APIHandler
 
 
 
+def page_home_view(request):
+    return render(request, 'home/home.html')
+
+
+
 class PriceViewBitcoin(APIView):
 
     def get(self, request):
