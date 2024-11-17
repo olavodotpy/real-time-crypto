@@ -154,6 +154,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_CREDENTIALS = True 
 
+CORS_ALLOW_ALL_ORIGINS = True 
 
 # session configuration in Django
 
