@@ -181,6 +181,8 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE =  'Strict'
 
 
+# CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
+
 CSRF_TRUSTED_ORIGINS = ['https://real-time-crypto-production.up.railway.app']
 
 
