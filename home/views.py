@@ -6,6 +6,7 @@ from rest_framework import status
 
 from django.views.decorators.csrf import csrf_exempt
 
+import requests
 
 from .utils import APIHandler
 
@@ -14,11 +15,13 @@ from .utils import APIHandler
 
 
 def home_view(request):
+    print('teste log')
     return render(request, 'home/home.html')
 
 
 
 def ethereum_view(request):
+    print('teste log')
     return render(request, 'home/pageEthereum.html')
 
 
@@ -27,6 +30,11 @@ def ethereum_view(request):
 class PriceViewBitcoin(APIView):
 
     def get(self, request):
+
+        print("Tentando acessar a API da Binance...")
+        response = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
+        print(f"Status code: {response.status_code}")
+        print(f"Response body: {response.text}")
 
         # Calls the API with the symbol and path value retrieved from POST
         handler = APIHandler("https://api.binance.com/api/v3")
@@ -45,6 +53,9 @@ class PriceViewEthereum(APIView):
     
     @csrf_exempt
     def post(self, request):
+
+        print("chegou no POST")
+
         data = request.data
         path = data.get("path_binance")
         symbol = data.get("symbol")
@@ -59,6 +70,12 @@ class PriceViewEthereum(APIView):
 
 
     def get(self, request):
+
+        print("Tentando acessar a API da Binance...")
+        response = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT")
+        print(f"Status code: {response.status_code}")
+        print(f"Response body: {response.text}")
+
         path = request.session.get('path_binance')
         symbol = request.session.get('symbol')
 
