@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,28 +12,22 @@
 
         <header>
             <div class="top">
-                <a href="" class="icon">
+                <a href="./" class="icon">
                     <img src="{% static 'home/image/binance-icon/download.png' %}" alt="Binance_icon">
                 </a>
-    
                 <div class="div-menu-crypto">
                     <div id="overlay" class="overlay"></div>
                     <button id="menuCrypto" class="button-menu-crypto">☰</button>
-    
                     <div id="contentMenuCrypto" class="content-menu">
                         <div class="div-exit-menu-crypto">
                             <button id="ExitMenuCrypto" class="button-menu-exit">➔</button>
                         </div>
-    
                         <div class="list-assets">
-    
                             <div class="assets-cripto">
-                                <a id="postDataETH" href="">
+                                <a id="postDataETH" href="/ethereum">
                                     <img src="{% static 'home/image/ETH/ethereum.png' %}" alt="ETH_icon">
                                     <p>Ethereum</p>
                                 </a>
-                            </div>
-    
                             </div>
                         </div>
                     </div>
@@ -71,8 +64,8 @@
         </main>
 
         {% block extra_js %}
-        <script type="module" src="./public/scripts/js/getBitcoin.js"></script>
-        <script type="module" src="./public/scripts/js/postEthereum.js"></script>
+        <script type="module" src="{% static 'home/js/getBitcoin.js' %}"></script>
+        <script type="module" src="{% static 'home/js/postEthereum.js' %}"></script>
         <script src="{% static 'home/js/menu.js' %}"></script>
         {% endblock %}
     </body>

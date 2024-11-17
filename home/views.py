@@ -13,8 +13,14 @@ from .utils import APIHandler
 
 
 
-def page_home_view(request):
+def home_view(request):
     return render(request, 'home/home.html')
+
+
+
+def ethereum_view(request):
+    return render(request, 'home/pageEthereum.html')
+
 
 
 
@@ -34,6 +40,7 @@ class PriceViewBitcoin(APIView):
 
 
 
+
 class PriceViewEthereum(APIView):
     
     @csrf_exempt
@@ -48,6 +55,7 @@ class PriceViewEthereum(APIView):
             request.session['path_binance'] = path
 
         return Response({"message": f"data received: {path}, {symbol}"})
+
 
 
     def get(self, request):
