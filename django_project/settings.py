@@ -31,9 +31,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     'real-time-crypto-production.up.railway.app',
-    'www.real-time-crypto-production.up.railway.app'
-    'http://127.0.0.1:8000',
+    'www.real-time-crypto-production.up.railway.app',
+    'http://127.0.0.1:8000/',
     'http://localhost:3000',
+    '127.0.0.1',
 ]
 
 
@@ -211,7 +212,7 @@ CSRF_COOKIE_SECURE = False
 
 CSRF_COOKIE_SAMESITE =  'Strict'
 
-CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
 
 
 # caching using redis
