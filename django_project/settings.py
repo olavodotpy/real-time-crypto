@@ -204,7 +204,7 @@ CSRF_COOKIE_SAMESITE =  'Strict'
 
 # CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
 
-CSRF_TRUSTED_ORIGINS = ['https://real-time-crypto-production.up.railway.app', '127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['https://real-time-crypto-production.up.railway.app', 'http://127.0.0.1:8000']
 
 
 # caching using redis
