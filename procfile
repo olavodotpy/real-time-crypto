@@ -1,2 +1,1 @@
 web: source /opt/src/bin/activate && python manage.py runserver 0.0.0.0:$PORT
-web: gunicorn django_project.wsgi

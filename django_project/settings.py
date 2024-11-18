@@ -170,27 +170,27 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
-#ESSION_COOKIE_HTTPONLY = True  
+ESSION_COOKIE_HTTPONLY = True  
 
 # For local development, if using HTTP
 
-#SESSION_COOKIE_SECURE = False 
+SESSION_COOKIE_SECURE = False 
 
 # Or 'None' for separate front-end development
 
-#SESSION_COOKIE_SAMESITE = 'Lax' 
+SESSION_COOKIE_SAMESITE = 'Lax' 
 
 
 
 # CSRF COOKIE
 
-#CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 #  to prevent the browser from manipulating the session
 
-#CSRF_COOKIE_SAMESITE =  'Strict'
+CSRF_COOKIE_SAMESITE =  'Strict'
 
-#CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
+CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
 
 
 # caching using redis
@@ -201,3 +201,6 @@ CACHES = {
         'LOCATION': 'redis://127.0.0.1:6379/1',
     }
 }
+
+
+PORT = os.getenv('PORT', 8000)
