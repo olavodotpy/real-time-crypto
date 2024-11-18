@@ -11,3 +11,5 @@ __pycache__/
 .idea/
 .vscode/
 .tool-versions
+
+home/staticfiles
