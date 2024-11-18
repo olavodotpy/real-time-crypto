@@ -127,10 +127,10 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    "/home/static/home",
+    "/home/static",
 ]
 
-STATIC_ROOT = "home/static/home/"
+STATIC_ROOT = "home/"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
