@@ -161,9 +161,9 @@ REST_FRAMEWORK = {
 
 # Allows sending of cookies/session
 
-#CORS_ALLOW_CREDENTIALS = True 
+CORS_ALLOW_CREDENTIALS = True 
 
-#CORS_ALLOW_ALL_ORIGINS = True 
+CORS_ALLOW_ALL_ORIGINS = True 
 
 
 # session configuration in Django
@@ -184,13 +184,13 @@ SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # CSRF COOKIE
 
-CSRF_COOKIE_SECURE = False
+#CSRF_COOKIE_SECURE = False
 
 #  to prevent the browser from manipulating the session
 
-CSRF_COOKIE_SAMESITE =  'Strict'
+#CSRF_COOKIE_SAMESITE =  'Strict'
 
-CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
+#CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
 
 
 # caching using redis
