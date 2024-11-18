@@ -29,7 +29,9 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = [
-    'real-time-crypto-production.up.railway.appreal-time-crypto-production.up.railway.app',
+    'localhost',
+    'real-time-crypto-production.up.railway.app',
+    'www.real-time-crypto-production.up.railway.app'
     'http://127.0.0.1:8000',
     'http://localhost:3000',
 ]
@@ -127,9 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "home/static"),
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
