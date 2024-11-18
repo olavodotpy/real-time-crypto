@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['127.0.0.1', 'real-time-crypto-production.up.railway.app', 'www.real-time-crypto-production.up.railway.app']
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'real-time-crypto-production.up.railway.app', 'www.real-time-crypto-production.up.railway.app']
 
 
 # Application definition
@@ -157,6 +157,25 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_ALL_ORIGINS = True 
 
+CORS_ALLOWED_ORIGINS = [
+    'https://real-time-crypto-production.up.railway.app',
+    'http://localhost:8000',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
+
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+    'Authorization',
+]
+
+
 # session configuration in Django
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
@@ -183,7 +202,7 @@ CSRF_COOKIE_SAMESITE =  'Strict'
 
 # CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
 
-CSRF_TRUSTED_ORIGINS = ['https://real-time-crypto-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://real-time-crypto-production.up.railway.app', '127.0.0.1:8000']
 
 
 # caching using redis
