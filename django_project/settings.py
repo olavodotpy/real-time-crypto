@@ -161,46 +161,24 @@ REST_FRAMEWORK = {
 
 # Allows sending of cookies/session
 
-CORS_ALLOW_CREDENTIALS = True 
+#CORS_ALLOW_CREDENTIALS = True 
 
-CORS_ALLOW_ALL_ORIGINS = True 
-
-CORS_ALLOWED_ORIGINS = [
-    'https://real-time-crypto-production.up.railway.app',
-    'http://localhost:8000',
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
-    'http://127.0.0.1:5500',  
-    'http://127.0.0.1:5501',  
-]
-
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'DELETE',
-    'OPTIONS',
-]
-
-CORS_ALLOW_HEADERS = [
-    'Content-Type',
-    'Authorization',
-]
+#CORS_ALLOW_ALL_ORIGINS = True 
 
 
 # session configuration in Django
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
-ESSION_COOKIE_HTTPONLY = True  
+#ESSION_COOKIE_HTTPONLY = True  
 
 # For local development, if using HTTP
 
-SESSION_COOKIE_SECURE = False 
+#SESSION_COOKIE_SECURE = False 
 
 # Or 'None' for separate front-end development
 
-SESSION_COOKIE_SAMESITE = 'Lax' 
+#SESSION_COOKIE_SAMESITE = 'Lax' 
 
 
 
