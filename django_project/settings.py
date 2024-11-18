@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY W
+# ARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -125,10 +126,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'home/static')
+    BASE_DIR / "static",
+    "/home/static/home",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = "home/static/home/"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -182,24 +184,24 @@ CORS_ALLOW_HEADERS = [
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
-SESSION_COOKIE_HTTPONLY = True  
+# SESSION_COOKIE_HTTPONLY = True  
 
 # For local development, if using HTTP
 
-SESSION_COOKIE_SECURE = False 
+# SESSION_COOKIE_SECURE = False 
 
 # Or 'None' for separate front-end development
 
-SESSION_COOKIE_SAMESITE = 'Lax' 
+# SESSION_COOKIE_SAMESITE = 'Lax' 
 
 
 # CSRF COOKIE
 
-CSRF_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
 
 #  to prevent the browser from manipulating the session
 
-CSRF_COOKIE_SAMESITE =  'Strict'
+#cCSRF_COOKIE_SAMESITE =  'Strict'
 
 
 # CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']

@@ -12,4 +12,6 @@ __pycache__/
 .vscode/
 .tool-versions
 
-staticfiles/
+home/static/home/admin
+home/static/home/home
+home/static/home/rest_framework
