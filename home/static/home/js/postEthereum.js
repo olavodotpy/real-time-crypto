@@ -1,6 +1,5 @@
 console.log("carregado post do ethereum antes")
 
-
 import { CryptoAPI } from "./module/requestCrypto.js";
 
 console.log("carregado post do ethereum depois")
