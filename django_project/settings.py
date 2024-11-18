@@ -125,12 +125,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/static/home/",
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = "/staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -184,24 +181,26 @@ CORS_ALLOW_HEADERS = [
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
-# SESSION_COOKIE_HTTPONLY = True  
+ESSION_COOKIE_HTTPONLY = True  
 
 # For local development, if using HTTP
 
-# SESSION_COOKIE_SECURE = False 
+SESSION_COOKIE_SECURE = False 
 
 # Or 'None' for separate front-end development
 
-# SESSION_COOKIE_SAMESITE = 'Lax' 
+SESSION_COOKIE_SAMESITE = 'Lax' 
+
 
 
 # CSRF COOKIE
 
-# CSRF_COOKIE_SECURE = False
+
+CSRF_COOKIE_SECURE = False
 
 #  to prevent the browser from manipulating the session
 
-#cCSRF_COOKIE_SAMESITE =  'Strict'
+CSRF_COOKIE_SAMESITE =  'Strict'
 
 
 # CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/']
