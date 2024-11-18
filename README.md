@@ -41,3 +41,6 @@ INSTALLED_APPS = [
 ]
 ```
 
+# Images
+![>;](https://i.imgur.com/44nuSkZ.png)
+![>:](https://i.imgur.com/18tlXiD.png)
