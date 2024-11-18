@@ -6,7 +6,6 @@ from rest_framework import status
 
 
 from django.views.decorators.csrf import csrf_exempt
-from corsheaders.decorators import cors_policy
 
 import requests
 
@@ -32,8 +31,6 @@ def ethereum_view(request):
 class PriceViewBitcoin(APIView):
 
     @csrf_exempt
-    @cors_policy(headers=['Content-Type,',
-    'Authorization'])
     def get(self, request):
 
         print("Tentando acessar a API da Binance...")
@@ -57,8 +54,6 @@ class PriceViewBitcoin(APIView):
 class PriceViewEthereum(APIView):
     
     @csrf_exempt
-    @cors_policy(headers=['Content-Type,',
-    'Authorization'])
     def post(self, request):
 
         print("chegou no POST")
@@ -76,8 +71,6 @@ class PriceViewEthereum(APIView):
 
 
     @csrf_exempt
-    @cors_policy(headers=['Content-Type,',
-    'Authorization'])
     def get(self, request):
 
         print("Tentando acessar a API da Binance...")
