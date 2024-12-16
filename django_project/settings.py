@@ -28,14 +28,7 @@ SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3
 DEBUG = True
 
 
-ALLOWED_HOSTS = [
-    'localhost',
-    'real-time-crypto-production.up.railway.app',
-    'www.real-time-crypto-production.up.railway.app',
-    'http://127.0.0.1:8000/',
-    'http://localhost:3000',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,20 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
+    'API_endpoint',
+    'pages',
     'rest_framework',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -133,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "home/static"),
+    os.path.join(BASE_DIR, "pages/static"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -161,46 +153,33 @@ REST_FRAMEWORK = {
 
 # Allows sending of cookies/session
 
-CORS_ALLOW_CREDENTIALS = True 
+# CORS_ALLOW_CREDENTIALS = True 
 
-CORS_ALLOW_ALL_ORIGINS = True 
+# CORS_ALLOW_ALL_ORIGINS = True 
 
 
 # session configuration in Django
 
-SESSION_ENGINE = "django.contrib.sessions.backends.db" 
+# SESSION_ENGINE = "django.contrib.sessions.backends.db" 
 
-ESSION_COOKIE_HTTPONLY = True  
+# ESSION_COOKIE_HTTPONLY = True  
 
 # For local development, if using HTTP
 
-SESSION_COOKIE_SECURE = False 
+# SESSION_COOKIE_SECURE = False 
 
 # Or 'None' for separate front-end development
 
-SESSION_COOKIE_SAMESITE = 'Lax' 
+# SESSION_COOKIE_SAMESITE = 'Lax' 
 
 
 
 # CSRF COOKIE
 
-CSRF_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
 
 #  to prevent the browser from manipulating the session
 
-CSRF_COOKIE_SAMESITE =  'Strict'
+# CSRF_COOKIE_SAMESITE =  'Strict'
 
-CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
-
-
-# caching using redis
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
-    }
-}
-
-
-PORT = os.getenv('PORT', 8000)
+# CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']

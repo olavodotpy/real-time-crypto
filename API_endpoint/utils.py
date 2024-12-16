@@ -15,7 +15,7 @@ class APIHandler:
 
     def __init__(self, base_URL: Text) -> None:
         self.__base_URL: Text = base_URL
-        self.__path: text = ""
+        self.__path: Text = ""
 
 
     @property
