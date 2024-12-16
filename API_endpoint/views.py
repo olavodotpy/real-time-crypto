@@ -62,7 +62,7 @@ class String_Bitcoin(APIView):
 
         cache.set('DATA_BTC', data, timeout=86400)
 
-        Response(data)
+        return Response(data)
 
 
 
@@ -86,4 +86,4 @@ class String_Ethereum(APIView):
 
         cache.set('DATA_ETH', data, timeout=86400)
 
-        Response(data)
+        return Response(data)
