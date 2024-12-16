@@ -14,7 +14,7 @@ HTML_ETHEREUM="ethereum.html"
 def bitcoin_page(request):
     data = requests.get(os.getenv("PRODUCTION") + "/api/vs/price/bitcoin")
 
-    return render(request, os.getenv("HTML_BITCOIN"), data.json())
+    return render(request, HTML_BITCOIN, data.json())
 
 
 def ethereum_page(request):
