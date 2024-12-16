@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bitcoin</title>
-        <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+        <title>Documente</title>
+        <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
     </head>
 
     <body>
@@ -13,7 +13,7 @@
         <header>
             <div class="top">
                 <a href="/" class="icon">
-                    <img src="{% static 'home/image/binance-icon/download.png' %}" alt="Binance_icon">
+                    <img src="{% static 'pages/image/binance-icon/download.png' %}" alt="Binance_icon">
                 </a>
                 <div class="div-menu-crypto">
                     <div id="overlay" class="overlay"></div>
@@ -25,7 +25,7 @@
                         <div class="list-assets">
                             <div class="assets-cripto">
                                 <a id="postDataETH" href="/ethereum">
-                                    <img src="{% static 'home/image/ETH/ethereum.png' %}" alt="ETH_icon">
+                                    <img src="{% static 'pages/image/ETH/ethereum.png' %}" alt="ETH_icon">
                                     <p>Ethereum</p>
                                 </a>
                             </div>
@@ -38,35 +38,25 @@
         <main>
             {% block content %}
             <div class="tile-crypto">
-                <h1>Bitcoin</h1>
+                <h1></h1>
             </div>
             <div>
-                <img class="main-icon" src="{% static 'home/image/BTC/bitcoin-main-image.png' %}" alt="Bitcoin_icon" width="160" height="160">
+                <img class="main-icon" src="{% static 'pages/image/BTC/bitcoin-main-image.png' %}" alt="Bitcoin_icon" width="160" height="160">
             </div>
             <div class="main">
                 <div class="price-box">
-                    <p id="priceSet" class="price"></p>
+                    <p class="price"> {{ price }} </p>
                 </div>
             </div>
             <div class="text">
                 <div class="text-block">
-                <p>Bitcoin is the first successful internet money based on peer-to-peer technology; </p>
-                <p>whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency.</p>
-                <p>It was created by an anonymous individual/group under the name, Satoshi Nakamoto.</p>
-                <p>The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.</p>
-                <p>Bitcoin is changing the way we see money as we speak.</p>
-                <p>The idea was to produce a means of exchange, independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way.</p>
-                <p>It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no central authority and banks.</p>
-                <p>Bitcoin is designed to have only 21 million BTC ever created, thus making it a deflationary currency.</p>
                 </div>
             </div>
             {% endblock %}
         </main>
 
         {% block extra_js %}
-        <script type="module" src="{% static 'home/js/getBitcoin.js' %}"></script>
-        <script type="module" src="{% static 'home/js/postEthereum.js' %}"></script>
-        <script src="{% static 'home/js/menu.js' %}"></script>
+        <script src="{% static 'pages/js/menu.js' %}"></script>
         {% endblock %}
     </body>
 </html>
