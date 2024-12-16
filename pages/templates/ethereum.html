@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+        <title> {{ title }} </title>
+        <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
     </head>
 
     <body>
@@ -20,18 +20,19 @@
         <main>
             {% block content %}
             <div class="tile-crypto">
-                <h1></h1>
+                <h1> {{ title }} </h1>
             </div>
             <div>
                 <img class="main-icon" src="{% static 'pages/image/ETH/ethereum-main-image.png' %}" alt="Ethereum_icon" width="160" height="160">
             </div>
             <div class="main">
                 <div class="price-box">
-                    <p class="price"> {{ price }} </p>
+                    <p class="price">US$ {{ price }}</p>
                 </div>
             </div>
             <div class="text">
                 <div class="text-block">
+                    {{ body }}
                 </div>
             </div>
             {% endblock %}    

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
+
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^bc)9=^2fj3_m$6o^65+w5k#rsw8n4ea7=mn#@f7=lz=&gfyy3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = os.getenv("DEBUG")
 DEBUG = True
-
 
 ALLOWED_HOSTS = ['*']
 
@@ -183,3 +186,22 @@ REST_FRAMEWORK = {
 # CSRF_COOKIE_SAMESITE =  'Strict'
 
 # CSRF_TRUSTED_ORIGINS = ['http://*','https://real-time-crypto-production.up.railway.app/', 'http://127.0.0.1:8000/']
+
+
+# Caching By Memcache
+
+# Production
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': f'{os.getenv("MEMCACHE_PRIVATE_SERVER")}',
+    }
+}
+
+# Localhost
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+#         'LOCATION': '127.0.0.1:11211',  # Default host for local Memcached
+#     }
+# }

@@ -13,11 +13,25 @@ HTML_ETHEREUM="ethereum.html"
 
 def bitcoin_page(request):
     data = requests.get(os.getenv("PRODUCTION") + "/api/vs/price/bitcoin")
+    data_string = requests.get(os.getenv("PRODUCTION") + "/api/vs/bitcoin")
 
-    return render(request, HTML_BITCOIN, data.json())
+    context = {
+        "price": data.json()['price'],
+        "title": data_string.json()['title'],
+        "body": data_string.json()['body'],
+    }
+
+    return render(request, HTML_BITCOIN, context)
 
 
 def ethereum_page(request):
     data = requests.get(os.getenv("PRODUCTION") + "/api/vs/price/ethereum")
+    data_string = requests.get(os.getenv("PRODUCTION") + "/api/vs/ethereum")
 
-    return render(request, HTML_ETHEREUM, data.json())
+    context = {
+        "price": data.json()['price'],
+        "title": data_string.json()['title'],
+        "body": data_string.json()['body'],
+    }
+
+    return render(request, HTML_ETHEREUM, context)
