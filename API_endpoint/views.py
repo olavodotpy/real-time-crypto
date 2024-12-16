@@ -18,8 +18,10 @@ class Bitcoin(APIView):
 
         response = requests.get(BINANCE_API, param)
 
+        price = float(response.json()['price'])
+
         data = {
-            "price": response.json()['price']
+            "price": f"{price:,.2f}",
         }
 
         return Response(data)
@@ -34,8 +36,10 @@ class Ethereum(APIView):
 
         response = requests.get(BINANCE_API, param)
 
+        price = float(response.json()['price'])
+
         data = {
-            "price": response.json()['price']
+            "price": f"{price:,.2f}",
         }
 
         return Response(data)
@@ -60,7 +64,7 @@ class String_Bitcoin(APIView):
             "body": data.json()['description']['en']
         }
 
-        cache.set('DATA_BTC', data, timeout=86400)
+        cache.set('DATA_BTC', data, timeout=2400)
 
         return Response(data)
 
@@ -84,6 +88,6 @@ class String_Ethereum(APIView):
             "body": data.json()['description']['en']
         }
 
-        cache.set('DATA_ETH', data, timeout=86400)
+        cache.set('DATA_ETH', data, timeout=2400)
 
         return Response(data)
