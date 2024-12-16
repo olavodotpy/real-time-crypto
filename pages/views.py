@@ -18,4 +18,6 @@ def bitcoin_page(request):
 
 
 def ethereum_page(request):
-    pass
+    data = requests.get(os.getenv("PRODUCTION") + "/api/vs/price/ethereum")
+
+    return render(request, HTML_ETHEREUM, data.json())

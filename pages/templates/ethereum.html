@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ethereum</title>
+        <title>Document</title>
         <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     </head>
 
@@ -12,7 +12,7 @@
         <header>
             <div class="top">
                 <a href="/" class="icon">
-                    <img src="{% static 'home/image/binance-icon/download.png' %}" alt="Ethereum_icon">
+                    <img src="{% static 'pages/image/binance-icon/download.png' %}" alt="Ethereum_icon">
                 </a>
             </div>
         </header>
@@ -20,35 +20,21 @@
         <main>
             {% block content %}
             <div class="tile-crypto">
-                <h1>Ethereum</h1>
+                <h1></h1>
             </div>
             <div>
-                <img class="main-icon" src="{% static 'home/image/ETH/ethereum-main-image.png' %}" alt="Ethereum_icon" width="160" height="160">
+                <img class="main-icon" src="{% static 'pages/image/ETH/ethereum-main-image.png' %}" alt="Ethereum_icon" width="160" height="160">
             </div>
             <div class="main">
                 <div class="price-box">
-                    <p id="priceSet" class="price"></p>
+                    <p class="price"> {{ price }} </p>
                 </div>
             </div>
             <div class="text">
                 <div class="text-block">
-                    <p>Ethereum is a global, open-source platform for decentralized applications.</p>
-                    <p>In other words, the vision is to create a world computer that anyone can build applications in a decentralized manner;</p>
-                    <p>while all states and data are distributed and publicly accessible.</p>
-                    <p>Ethereum supports smart contracts in which developers can write code in order to program digital value.</p>
-                    <p>Examples of decentralized apps (dapps) that are built on Ethereum includes tokens, non-fungible tokens, decentralized finance apps, lending protocol, decentralized exchanges, and much more.</p>
-                    <p>Ethereum, all transactions and smart contract executions require a small fee to be paid. This fee is called Gas.</p>
-                    <p>In technical terms, Gas refers to the unit of measure on the amount of computational effort required to execute an operation or a smart contract.</p>
-                    <p>The more complex the execution operation is, the more gas is required to fulfill that operation.</p>
-                    <p>Gas fees are paid entirely in Ether (ETH), which is the native coin of the blockchain.</p>
-                    <p>The price of gas can fluctuate from time to time depending on the network demand.</p>
                 </div>
             </div>
             {% endblock %}    
         </main>
-
-        {% block extra_js %}
-        <script type="module" src="{% static 'home/js/getEthereum.js' %}"></script>
-        {% endblock %}
     </body>
 </html>

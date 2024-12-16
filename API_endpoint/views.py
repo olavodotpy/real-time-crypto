@@ -1,6 +1,5 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 import requests
 
 
@@ -13,8 +12,6 @@ BINANCE_API = "https://api.binance.us/api/v3/ticker/price"
 class Bitcoin(APIView):
 
     def get(self, request):
-
-        # Calls the API with the symbol and path value retrieved from POST
 
         param = {"symbol": "BTCUSDT"}
 
@@ -36,9 +33,11 @@ class Ethereum(APIView):
 
         response = requests.get(BINANCE_API, param)
 
-        price = response.json()['price']
+        context = {
+            "price": response.json()['price']
+        }
 
-        return Response({"price": f"{price}"})
+        return Response(context)
 
 
 
