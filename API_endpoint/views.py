@@ -12,7 +12,7 @@ class Bitcoin(APIView):
     def get(self, request):
 
         # Calls the API with the symbol and path value retrieved from POST
-        handler = APIHandler("https://api.binance.com/api/v3")
+        handler = APIHandler("https://api.binance.us/api/v3")
 
         handler.set_path = "ticker/price"
 
